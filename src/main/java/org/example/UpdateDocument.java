@@ -1,32 +1,15 @@
 package org.example;
 
+import java.util.*;
+
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 
-import java.util.*;
-
 public class UpdateDocument {
-    String[] listOfVariables = new String[]{
-            "name",
-            "rg",
-            "cpf",
-            "location",
-            "cep",
-            "phoneNumber",
-            "houseDescription",
-            "houseLocation",
-            "dateInn",
-            "dateOut",
-            "price",
-            "contractDate",
-            "maxPerson",
-    };
-    Map<String, String> mapOfValues = new HashMap<>();
-    public UpdateDocument(List<String> listOfValues) {
-        for (int i = 0; i < listOfValues.size(); i++) {
-            mapOfValues.put(listOfVariables[i],listOfValues.get(i));
-        }
+    Map<String, String> inputMap;
+    public UpdateDocument(HashMap<String, String> map) {
+        inputMap = map;
     }
     public void updateAllInfo(XWPFDocument doc) {
         {
@@ -35,12 +18,14 @@ public class UpdateDocument {
             for (XWPFParagraph xwpfParagraph : xwpfParagraphsList) {
                 for (XWPFRun xwpfRun : xwpfParagraph.getRuns()) {
                     String docText = xwpfRun.getText(0);
-                    for (String listOfVariable : listOfVariables) {
-                        String newText = "${" + listOfVariable + "}";
-                        if (docText != null) {
-                            docText = docText.replace(newText, mapOfValues.get(listOfVariable));
-                            xwpfRun.setText(docText, 0);
-                        }
+                    if (docText == null) {
+                        continue;
+                    }
+
+                    for (Map.Entry<String, String> entry : inputMap.entrySet() ) {
+                        String placeHolder = "${" + entry.getKey() + "}";
+                        docText = docText.replace(placeHolder, entry.getValue());
+                        xwpfRun.setText(docText, 0);
                     }
                 }
             }
