@@ -1,7 +1,14 @@
 package org.example;
 
+import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
+
+import static java.lang.System.in;
 
 public class GetInformation {
     HashMap<String,String> inputMap = new HashMap<>();
@@ -19,17 +26,44 @@ public class GetInformation {
         data.put("phoneNumber", new SimpleEntry<>("Telefone", "(99) 9 9999-9999"));
         data.put("houseDescription", new SimpleEntry<>("Descrição da casa", "Casa com dois quartos, sala, cozinha, banheiro, garagem coberta"));
         data.put("houseLocation", new SimpleEntry<>("Endereço da casa", "Rua endereço da casa, nº 999, Bairro, Cidade / Estado"));
-        data.put("dateInn", new SimpleEntry<>("Data de entrada", "00/00/0000"));
-        data.put("dateOut", new SimpleEntry<>("Data de saída", "99/99/9999"));
-        data.put("price", new SimpleEntry<>("Valor", "R$999,00 (Novecentos e noventa e nove reais)"));
-        data.put("contractDate", new SimpleEntry<>("Dia de hoje", "55/55/5555"));
+        data.put("dateInn", new SimpleEntry<>("Data de entrada", "01/01/2024"));
+        data.put("dateOut", new SimpleEntry<>("Data de saída", "31/01/2024"));
+        data.put("price", new SimpleEntry<>("Valor", "999,00 (Novecentos e noventa e nove reais)"));
         data.put("maxPerson", new SimpleEntry<>("Número de pessoas", "5"));
 
+        Scanner scanner = new Scanner(in);
         for (Map.Entry<String, SimpleEntry<String, String>> entry : data.entrySet()) {
             System.out.println("Digite o " + entry.getValue().getKey() + ": ");
-
-            System.out.println(entry.getValue().getValue());
-            inputMap.put(entry.getKey(), entry.getValue().getValue());
+            if (true) {
+                System.out.println(entry.getValue().getValue());
+                inputMap.put(entry.getKey(), entry.getValue().getValue());
+            } else {
+                String userInput = scanner.nextLine();
+                System.out.println(userInput);
+                inputMap.put(entry.getKey(), userInput);
+            }
         }
+        GetTodayDate();
+        DateFormatter(inputMap.get("dateInn"), inputMap.get("dateOut"));
+    }
+
+    private void DateFormatter(String startDate, String endDate) throws DateTimeException {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        long daysBetween;
+        try {
+            LocalDate sDate = LocalDate.parse(startDate, dtf);
+            LocalDate eDate = LocalDate.parse(endDate, dtf);
+            daysBetween = ChronoUnit.DAYS.between(sDate,eDate);
+        } catch (DateTimeException e) {
+            System.err.println("Are you sure de dates are in correct format? (dd MM yyyy)");
+            throw e;
+        }
+
+        inputMap.put("totalDays", String.valueOf(daysBetween));
+    }
+
+    private void GetTodayDate() {
+        String timeStamp = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+        inputMap.put("contractDate", timeStamp);
     }
 }
