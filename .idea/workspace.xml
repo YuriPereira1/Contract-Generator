@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b0f6964-5450-47a9-b8dc-cdf841f4f188" name="Changes" comment="Change info for testing purpose.">
+    <list default="true" id="0b0f6964-5450-47a9-b8dc-cdf841f4f188" name="Changes" comment="Added obj Extension to write number in text.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/CurrencyWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Template.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" afterDir="false" />
@@ -68,8 +69,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Update-getInformation-to-userInput-values",
+    "git-widget-placeholder": "price-formatter-value",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/yuri/Downloads/porextenso-master",
     "onboarding.tips.debug.path": "/home/yuri/Projects/DocumentProject/src/main/java/org/example/Main.java",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
@@ -128,7 +130,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="price-formatter-value" />
                       </list>
                     </value>
                   </entry>
@@ -143,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored and Cleaned all code." />
     <MESSAGE value="Change info for testing purpose." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change info for testing purpose." />
+    <MESSAGE value="Added obj Extension to write number in text." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added obj Extension to write number in text." />
   </component>
 </project>

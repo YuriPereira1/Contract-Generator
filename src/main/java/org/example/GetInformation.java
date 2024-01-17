@@ -1,5 +1,7 @@
 package org.example;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -28,7 +30,7 @@ public class GetInformation {
         data.put("houseLocation", new SimpleEntry<>("Endereço da casa", "Rua endereço da casa, nº 999, Bairro, Cidade / Estado"));
         data.put("dateInn", new SimpleEntry<>("Data de entrada", "01/01/2024"));
         data.put("dateOut", new SimpleEntry<>("Data de saída", "31/01/2024"));
-        data.put("price", new SimpleEntry<>("Valor", "999,00 (Novecentos e noventa e nove reais)"));
+        data.put("price", new SimpleEntry<>("Valor", "999"));
         data.put("maxPerson", new SimpleEntry<>("Número de pessoas", "5"));
 
         Scanner scanner = new Scanner(in);
@@ -45,6 +47,8 @@ public class GetInformation {
         }
         GetTodayDate();
         DateFormatter(inputMap.get("dateInn"), inputMap.get("dateOut"));
+
+        priceFormatter(inputMap.get("price"));
     }
 
     private void DateFormatter(String startDate, String endDate) throws DateTimeException {
@@ -65,5 +69,26 @@ public class GetInformation {
     private void GetTodayDate() {
         String timeStamp = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
         inputMap.put("contractDate", timeStamp);
+    }
+
+    private void priceFormatter(String price) {
+        Locale locale = new Locale.Builder().setLanguage("pt").setRegion("BR").build();
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
+
+        double amount = Double.parseDouble(price);
+        double signalAmount = amount / 2;
+
+        CurrencyWriter cw = CurrencyWriter.getInstance();
+
+        String amountString = currencyFormatter.format(amount) + " (" +
+                cw.write(new BigDecimal(amount))
+                + ")";
+        String signalAmountString = currencyFormatter.format(signalAmount) + " (" +
+                cw.write(new BigDecimal(signalAmount))
+                + ")";
+
+        inputMap.put("price", amountString);
+        inputMap.put("signalPrice", signalAmountString);
+
     }
 }
