@@ -1,5 +1,7 @@
 package org.example;
 
+import jakarta.annotation.Nonnull;
+
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -30,7 +32,7 @@ public class GetInformation {
         data.put("houseLocation", new SimpleEntry<>("Endereço da casa", "Rua endereço da casa, nº 999, Bairro, Cidade / Estado"));
         data.put("dateInn", new SimpleEntry<>("Data de entrada", "01/01/2024"));
         data.put("dateOut", new SimpleEntry<>("Data de saída", "31/01/2024"));
-        data.put("price", new SimpleEntry<>("Valor", "999"));
+        data.put("price", new SimpleEntry<>("Valor", "10000"));
         data.put("maxPerson", new SimpleEntry<>("Número de pessoas", "5"));
 
         Scanner scanner = new Scanner(in);
@@ -45,50 +47,54 @@ public class GetInformation {
                 inputMap.put(entry.getKey(), userInput);
             }
         }
-        GetTodayDate();
-        DateFormatter(inputMap.get("dateInn"), inputMap.get("dateOut"));
 
-        priceFormatter(inputMap.get("price"));
+        String today = GetTodayDate();
+        inputMap.put("contractDate", today);
+
+        String totalDays = GetDaysBetween(inputMap.get("dateInn"), inputMap.get("dateOut"));
+        inputMap.put("totalDays", totalDays);
+
+        double price = Double.parseDouble(inputMap.get("price"));
+        inputMap.put("price", AsPrice(price));
+        inputMap.put("signalPrice", AsPrice(price / 2));
     }
 
-    private void DateFormatter(String startDate, String endDate) throws DateTimeException {
+    private @Nonnull String GetDaysBetween(String startDate, String endDate) throws DateTimeException {
+        LocalDate initialDate = ParseAsDate(startDate);
+        LocalDate finalDate = ParseAsDate(endDate);
+
+        long daysBetween = ChronoUnit.DAYS.between(initialDate,finalDate);
+        return String.valueOf(daysBetween);
+    }
+
+    private LocalDate ParseAsDate(String input) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        long daysBetween;
+        LocalDate date;
         try {
-            LocalDate sDate = LocalDate.parse(startDate, dtf);
-            LocalDate eDate = LocalDate.parse(endDate, dtf);
-            daysBetween = ChronoUnit.DAYS.between(sDate,eDate);
+            date = LocalDate.parse(input, dtf);
         } catch (DateTimeException e) {
             System.err.println("Are you sure de dates are in correct format? (dd MM yyyy)");
             throw e;
         }
-
-        inputMap.put("totalDays", String.valueOf(daysBetween));
+        return date;
     }
 
-    private void GetTodayDate() {
-        String timeStamp = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
-        inputMap.put("contractDate", timeStamp);
+    private @Nonnull String GetTodayDate() {
+        return new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
     }
 
-    private void priceFormatter(String price) {
-        Locale locale = new Locale.Builder().setLanguage("pt").setRegion("BR").build();
-        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
-
-        double amount = Double.parseDouble(price);
-        double signalAmount = amount / 2;
+    private @Nonnull String AsPrice(double price) {
+        String amount = PriceFormatter(price);
 
         CurrencyWriter cw = CurrencyWriter.getInstance();
 
-        String amountString = currencyFormatter.format(amount) + " (" +
-                cw.write(new BigDecimal(amount))
-                + ")";
-        String signalAmountString = currencyFormatter.format(signalAmount) + " (" +
-                cw.write(new BigDecimal(signalAmount))
-                + ")";
+        return amount + " (" + cw.write(new BigDecimal(price)) + ")";
+    }
 
-        inputMap.put("price", amountString);
-        inputMap.put("signalPrice", signalAmountString);
+    private String PriceFormatter(double input) {
+        Locale locale = new Locale.Builder().setLanguage("pt").setRegion("BR").build();
+        NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
 
+        return currencyFormatter.format(input);
     }
 }

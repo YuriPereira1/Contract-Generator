@@ -113,7 +113,7 @@ public class CurrencyWriter {
                 sb.append(" ").append(PARTICULA_ADITIVA).append(" ");
                 sb.append(comporNomeGrupos(valor));
                 String nomeGrandeza = obterNomeGrandeza(expoente, valor);
-                if (nomeGrandeza.length() > 0) {
+                if (!nomeGrandeza.isEmpty()) {
                     sb.append(" ");
                 }
                 sb.append(nomeGrandeza);
