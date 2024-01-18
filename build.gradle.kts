@@ -16,6 +16,7 @@ dependencies {
     implementation("org.apache.poi:poi-ooxml:5.2.5")
     implementation("org.apache.logging.log4j:log4j-core:2.22.1")
     implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
+    implementation("org.javatuples:javatuples:1.2")
 
 }
 

@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b0f6964-5450-47a9-b8dc-cdf841f4f188" name="Changes" comment="Added obj Extension to write number in text.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateCep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateCpf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateDate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CurrencyWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CurrencyWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +47,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -73,7 +81,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "cleaning-GetInformation",
+    "git-widget-placeholder": "validator-for-user-inputs",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/yuri/Downloads/porextenso-master",
     "onboarding.tips.debug.path": "/home/yuri/Projects/DocumentProject/src/main/java/org/example/Main.java",
@@ -140,6 +148,21 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
