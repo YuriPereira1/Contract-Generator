@@ -22,7 +22,7 @@ public class GetInformation {
 
     public GetInformation() {
         LinkedHashMap<String, Triplet<String, String, Validator>> data = new LinkedHashMap<>();
-        data.put("name", new Triplet<>("nome", "Nome completo do individuo", new ValidateText()));
+        data.put("name", new Triplet<>("nome", "Digite um NOME", new ValidateName()));
         data.put("rg", new Triplet<>("RG", "000000000", new ValidateRg()));
         data.put("cpf", new Triplet<>("CPF", "000.000.000-00", new ValidateCpf()));
         data.put("location", new Triplet<>("Endereço", "Rua endereço , n° 000, Bairro, Cidade / Estado", new ValidateText()));
@@ -37,19 +37,23 @@ public class GetInformation {
 
         Scanner scanner = new Scanner(in);
         for (Map.Entry<String, Triplet<String, String, Validator>> entry : data.entrySet()) {
-            System.out.println("Digite o " + entry.getValue().getValue0() + ": ");
+            while (true){
+                System.out.println("Digite o " + entry.getValue().getValue0() + ": ");
 
-            Validator validator = entry.getValue().getValue2();
-            if (true) {
-                if (!validator.execute(entry.getValue().getValue1())) {
-                    System.out.println(entry.getValue().getValue1());
-                    inputMap.put(entry.getKey(), entry.getValue().getValue1());
-                }
-            } else {
-                String userInput = scanner.nextLine();
-                if (!validator.execute(userInput)) {
-                    System.out.println(userInput);
-                    inputMap.put(entry.getKey(), userInput);
+                Validator validator = entry.getValue().getValue2();
+                if (true) {
+                    if (validator.execute(entry.getValue().getValue1())) {
+                        System.out.println(entry.getValue().getValue1());
+                        inputMap.put(entry.getKey(), entry.getValue().getValue1());
+                        break;
+                    }
+                } else {
+                    String userInput = scanner.nextLine();
+                    if (!validator.execute(userInput)) {
+                        System.out.println(userInput);
+                        inputMap.put(entry.getKey(), userInput);
+                        break;
+                    }
                 }
             }
         }
