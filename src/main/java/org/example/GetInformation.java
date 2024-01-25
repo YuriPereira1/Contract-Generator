@@ -23,11 +23,11 @@ public class GetInformation {
     public GetInformation() {
         LinkedHashMap<String, Triplet<String, String, Validator>> data = new LinkedHashMap<>();
         data.put("name", new Triplet<>("nome", "Digite um NOME", new ValidateName()));
-        data.put("rg", new Triplet<>("RG", "000000000", new ValidateRg()));
-        data.put("cpf", new Triplet<>("CPF", "000.000.000-00", new ValidateCpf()));
+        data.put("rg", new Triplet<>("RG", "123456789", new ValidateRg()));
+        data.put("cpf", new Triplet<>("CPF", "12312312311", new ValidateCpf()));
         data.put("location", new Triplet<>("Endereço", "Rua endereço , n° 000, Bairro, Cidade / Estado", new ValidateText()));
-        data.put("cep", new Triplet<>("CEP", "80000-000", new ValidateCep()));
-        data.put("phoneNumber", new Triplet<>("Telefone", "(99) 9 9999-9999", new ValidatePhone()));
+        data.put("cep", new Triplet<>("CEP", "12345678", new ValidateCep()));
+        data.put("phoneNumber", new Triplet<>("Telefone", "55912345678", new ValidatePhone()));
         data.put("houseDescription", new Triplet<>("Descrição da casa", "Casa com dois quartos, sala, cozinha, banheiro, garagem coberta", new ValidateText()));
         data.put("houseLocation", new Triplet<>("Endereço da casa", "Rua endereço da casa, nº 999, Bairro, Cidade / Estado", new ValidateText()));
         data.put("dateInn", new Triplet<>("Data de entrada", "01/01/2024", new ValidateDate()));

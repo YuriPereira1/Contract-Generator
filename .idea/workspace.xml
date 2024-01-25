@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b0f6964-5450-47a9-b8dc-cdf841f4f188" name="Changes" comment="Added obj Extension to write number in text.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateCep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateCep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateCpf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateCpf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +80,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "validate-Name",
+    "git-widget-placeholder": "validators",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/yuri/Downloads/porextenso-master",
     "onboarding.tips.debug.path": "/home/yuri/Projects/DocumentProject/src/main/java/org/example/Main.java",

@@ -8,11 +8,8 @@ public class ValidateName implements Validator{
         if (input.isBlank()) {
             return false;
         }
-        Pattern pattern = Pattern.compile("^[\\p{L} ]*$");
+        Pattern pattern = Pattern.compile("^\\p{L}+ \\p{L}+[\\p{L} ]*\\p{L}$");
         Matcher matcher = pattern.matcher(input);
-        if (matcher.matches()) {
-            return true;
-        }
-        return false;
+        return matcher.matches();
     }
 }
