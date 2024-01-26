@@ -1,4 +1,4 @@
-package org.example;/*
+package document.core;/*
 This file is part of PorExtenso.
 
     PorExtenso is free software: you can redistribute it and/or modify

@@ -1,18 +1,18 @@
-package org.example;
+package document.core;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidateNumber implements Validator<Boolean, String>{
+public class ValidateRg implements Validator<Boolean, String>{
     public Result<Boolean, String> execute(String input) {
         if (input.isBlank()) {
-            return Result.error("O número não pode ser vazio!");
+            return Result.error("O rg não pode ser vazio!");
         }
-        Pattern pattern = Pattern.compile("^\\d+$");
+        Pattern pattern = Pattern.compile("^\\d{9}$");
         Matcher matcher = pattern.matcher(input);
         if (matcher.matches()) {
             return Result.success(true);
         };
-        return Result.error("Digite apenas números!");
+        return Result.error("Rg inválido! (Rg deve conter exatos 9 números)");
     }
 }

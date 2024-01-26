@@ -1,4 +1,4 @@
-package org.example;
+package document.core;
 
 public class Result<S, E> {
     private final S successValue;
