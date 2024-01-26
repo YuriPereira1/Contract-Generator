@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
+import static java.lang.System.err;
 import static java.lang.System.in;
 
 public class GetInformation {
@@ -21,7 +22,7 @@ public class GetInformation {
     }
 
     public GetInformation() {
-        LinkedHashMap<String, Triplet<String, String, Validator>> data = new LinkedHashMap<>();
+        LinkedHashMap<String, Triplet<String, String, Validator<Boolean, String>>> data = new LinkedHashMap<>();
         data.put("name", new Triplet<>("nome", "Digite um NOME", new ValidateName()));
         data.put("rg", new Triplet<>("RG", "123456789", new ValidateRg()));
         data.put("cpf", new Triplet<>("CPF", "12312312311", new ValidateCpf()));
@@ -36,24 +37,26 @@ public class GetInformation {
         data.put("maxPerson", new Triplet<>("Número de pessoas", "5", new ValidateNumber()));
 
         Scanner scanner = new Scanner(in);
-        for (Map.Entry<String, Triplet<String, String, Validator>> entry : data.entrySet()) {
-            while (true){
-                System.out.println("Digite o " + entry.getValue().getValue0() + ": ");
+        for (Map.Entry<String, Triplet<String, String, Validator<Boolean, String>>> entry : data.entrySet()) {
+            Validator<Boolean, String> validator = entry.getValue().getValue2();
 
-                Validator validator = entry.getValue().getValue2();
+            System.out.println("Digite o " + entry.getValue().getValue0() + ": ");
+
+            while (true){
+                String userInput;
                 if (true) {
-                    if (validator.execute(entry.getValue().getValue1())) {
-                        System.out.println(entry.getValue().getValue1());
-                        inputMap.put(entry.getKey(), entry.getValue().getValue1());
-                        break;
-                    }
+                    userInput = entry.getValue().getValue1();
                 } else {
-                    String userInput = scanner.nextLine();
-                    if (!validator.execute(userInput)) {
-                        System.out.println(userInput);
-                        inputMap.put(entry.getKey(), userInput);
-                        break;
-                    }
+                    userInput = scanner.nextLine();
+                }
+                Result<Boolean, String> inputResult = validator.execute(userInput);
+                if (inputResult.isSuccess()) {
+                    System.out.println(userInput);
+                    inputMap.put(entry.getKey(), userInput);
+                    break;
+                } else {
+                    String errorMsg = inputResult.getErrorValue();
+                    err.println(errorMsg);
                 }
             }
         }

@@ -3,13 +3,16 @@ package org.example;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidateCpf implements Validator{
-    public boolean execute(String input) {
+public class ValidateCpf implements Validator<Boolean, String>{
+    public Result<Boolean, String> execute(String input) {
         if (input.isBlank()) {
-            return false;
+            return Result.error("O cpf não pode ser vazio!");
         }
         Pattern pattern = Pattern.compile("^\\d{11}$");
         Matcher matcher = pattern.matcher(input);
-        return matcher.matches();
+        if (matcher.matches()) {
+            return Result.success(true);
+        };
+        return Result.error("CPF inválido! (CPF deve conter exatos 11 números)");
     }
 }

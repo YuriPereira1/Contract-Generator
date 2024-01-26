@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "validators",
+    "git-widget-placeholder": "error-handling",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/yuri/Downloads/porextenso-master",
     "onboarding.tips.debug.path": "/home/yuri/Projects/DocumentProject/src/main/java/org/example/Main.java",
