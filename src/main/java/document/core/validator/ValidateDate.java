@@ -1,4 +1,6 @@
-package document.core;
+package document.core.validator;
+
+import document.core.utils.Result;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

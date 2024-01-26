@@ -6,16 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="0b0f6964-5450-47a9-b8dc-cdf841f4f188" name="Changes" comment="Added obj Extension to write number in text.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GetInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateCep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateCep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateCpf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateCpf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidatePhone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateRg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ValidateText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/GetInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/GetInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/UpdateDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/UpdateDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/parse/Parse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/parse/Parse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/parse/ParseCep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/parse/ParseCep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/utils/CurrencyWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/utils/CurrencyWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/utils/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/utils/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateCep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateCep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateCpf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateCpf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidatePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidatePhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateRg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateRg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/ValidateText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/document/core/validator/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/document/core/validator/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +97,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="document.core.validator" />
     </key>
   </component>
   <component name="SharedIndexes">

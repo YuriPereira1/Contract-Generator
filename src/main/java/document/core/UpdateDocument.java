@@ -1,4 +1,4 @@
-package org.example;
+package document.core;
 
 import java.util.*;
 

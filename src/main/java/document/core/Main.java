@@ -1,4 +1,4 @@
-package org.example;
+package document.core;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

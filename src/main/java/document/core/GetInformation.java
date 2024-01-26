@@ -1,5 +1,9 @@
-package org.example;
+package document.core;
 
+import document.core.parse.ParseCep;
+import document.core.utils.CurrencyWriter;
+import document.core.utils.Result;
+import document.core.validator.*;
 import jakarta.annotation.Nonnull;
 import org.javatuples.Triplet;
 
@@ -49,14 +53,27 @@ public class GetInformation {
                 } else {
                     userInput = scanner.nextLine();
                 }
-                Result<Boolean, String> inputResult = validator.execute(userInput);
-                if (inputResult.isSuccess()) {
-                    System.out.println(userInput);
-                    inputMap.put(entry.getKey(), userInput);
-                    break;
+                if (entry.getKey().equals("cep")) {
+                    Result<String, String> inputResult = new ParseCep().execute(userInput);
+                    if (inputResult.isSuccess()) {
+                        System.out.println(inputResult.getSuccessValue());
+                        inputMap.put(entry.getKey(), inputResult.getSuccessValue());
+                        break;
+                    } else {
+                        String errorMsg = inputResult.getErrorValue();
+                        err.println(errorMsg);
+                    }
+
                 } else {
-                    String errorMsg = inputResult.getErrorValue();
-                    err.println(errorMsg);
+                    Result<Boolean, String> inputResult = validator.execute(userInput);
+                    if (inputResult.isSuccess()) {
+                        System.out.println(userInput);
+                        inputMap.put(entry.getKey(), userInput);
+                        break;
+                    } else {
+                        String errorMsg = inputResult.getErrorValue();
+                        err.println(errorMsg);
+                    }
                 }
             }
         }
